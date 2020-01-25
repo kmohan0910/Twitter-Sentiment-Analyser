@@ -3,7 +3,6 @@ It Begins with:
 Authorize twitter API client.
 Make a GET request to Twitter API to fetch tweets for a particular query.
 Parse the tweets. Classify each tweet as positive, negative or neutral.
-
 Tweepy: tweepy is the python client for the official Twitter API.
 Install it using following pip command:
 pip install tweepy
@@ -15,6 +14,7 @@ Also, we need to install some NLTK corpora using following command:
 python -m textblob.download_corpora
 (Corpora is nothing but a large and structured set of texts.)
 
+TextBlob is actually a high level library built over top of NLTK library. First we call clean_tweet method to remove links, special characters, etc. from the tweet using some simple regex.
 TextBlob uses a Movies Reviews dataset in which reviews have already been labelled as positive or negative.
 Positive and negative features are extracted from each positive and negative review respectively.
 Training data now consists of labelled positive and negative features. This data is trained on a Naive Bayes Classifier.
