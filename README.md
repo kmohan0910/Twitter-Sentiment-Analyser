@@ -21,7 +21,9 @@ Training data now consists of labelled positive and negative features. This data
 Then, we use sentiment.polarity method of TextBlob class to get the polarity of tweet between -1 to 1.
 
 
-
+Update:
+added GUI using pyqt5 for better understanding and feel.
+![Test Image 1](demo.jpg)
 
 
 References:
@@ -29,3 +31,4 @@ References:
 http://www.ijcaonline.org/research/volume125/number3/dandrea-2015-ijca-905866.pdf
 https://textblob.readthedocs.io/en/dev/quickstart.html#sentiment-analysis
 textblob.readthedocs.io/en/dev/_modules/textblob/en/sentiments.html
+
