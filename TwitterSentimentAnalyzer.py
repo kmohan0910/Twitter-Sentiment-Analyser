@@ -2,7 +2,13 @@ import re
 import tweepy
 from tweepy import OAuthHandler
 from tweepy import API
+from PyQt5.QtWidgets import QMessageBox
+
 from textblob import TextBlob
+
+from PyQt5 import QtWidgets,uic
+
+
 class TwitterAnalyzer(object):
     def __init__(self):
         accessToken = '1158083326340673538-SzBqOQsUoB2rRBC7MXQJT8w9FboGue'
@@ -48,11 +54,12 @@ def main():
     print("\n")
     var = TwitterAnalyzer()
     searchAbout = 'Narendra Modi'
-    searchAbout = input("Enter The Topic You Would like to Analyze Tweets for: ")
-    varCount = int(input("Enter The Number of tweets You Would like fetch: "))
+    searchAbout = call.lineEdit.text()
+    varCount = call.lineEdit_2.text()
     #varcount = 20
     tweetData = var.fetchTweets(searchAbout, varCount) #List containing Dictionaries with Tweet as Key and Sentiment as Value
     #print(tweetData[0])
+
     positiveTweets = [tweet for tweet in tweetData if tweet['sentiments'] == 'positive']
     print("Positive tweets: {} %".format(100 * len(positiveTweets)/len(tweetData)))
     negativeTweets = [tweet for tweet in tweetData if tweet['sentiments'] == 'negative']
@@ -73,4 +80,9 @@ def main():
             print(tweet['tweets'] + '\n')
 
 if __name__ == '__main__':
-    main()
+    app=QtWidgets.QApplication([])
+    call=uic.loadUi("demo.ui") # all the fuctions regarding the main window are stored in this file which is imported we can also 
+                                #we can also convert ui file to py and implement in that file but that would increase the lines of code and increase the complexity.
+    call.pushButton.clicked.connect(main)
+    call.show()
+    app.exec()
