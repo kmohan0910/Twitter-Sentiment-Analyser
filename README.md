@@ -23,7 +23,7 @@ Then, we use sentiment.polarity method of TextBlob class to get the polarity of 
 
 Update:
 added GUI using pyqt5 for better understanding and feel.
-![demo](demo.jpg)
+![demo](demo.JPG)
 
 
 References:
