@@ -1,4 +1,4 @@
-# twitterSentimentanalyser
+# Twitter-Sentiment-Analyser
 It Begins with:
 Authorize twitter API client.
 Make a GET request to Twitter API to fetch tweets for a particular query.
